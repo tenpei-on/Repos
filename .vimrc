@@ -12,10 +12,13 @@ set autoindent
 set showcmd
 filetype plugin indent on
 set smartcase
+set shiftwidth=2
 
 
+"coc command use to install language expantion example CocInstall coc-python
+"refer https://www.npmjs.com/search?q=keywords%3Acoc.nvim
 
-"dein Scripts-----------------------------
+"dein Scripts(python module)-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -34,6 +37,8 @@ if dein#load_state('/Users/tenpei/.cache')
  " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
+  "coc.nvim 
+  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
  " jedi-vim (2020-04)
   call dein#add('davidhalter/jedi-vim')
 
