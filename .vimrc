@@ -1,64 +1,28 @@
 set nu
-colorscheme desert
-set cursorcolumn
-syntax enable
-set expandtab
-set tabstop=2
-set hlsearch
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
-set laststatus=2
-set wildmode=list:longest
-set autoindent
-set showcmd
-filetype plugin indent on
+" vim の矩形選択で文字が無くても右へ進める
+set virtualedit=block
+" 検索するときに大文字小文字を区別しない
+set ignorecase
+" 小文字で検索すると大文字と小文字を無視して検索
 set smartcase
+" 検索がファイル末尾まで進んだら、ファイル先頭から再び検索
+set wrapscan
+" 検索結果をハイライト表示
+set hlsearch
+" Beep音ナシ
+set visualbell t_vb=
+set showcmd
+colorscheme desert
+set expandtab
+" インデント幅
 set shiftwidth=2
-
-
-"coc command use to install language expantion example CocInstall coc-python
-"refer https://www.npmjs.com/search?q=keywords%3Acoc.nvim
-
-"dein Scripts(python module)-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/Users/tenpei/.cache/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/Users/tenpei/.cache')
-  call dein#begin('/Users/tenpei/.cache')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('/Users/tenpei/.cache/repos/github.com/Shougo/dein.vim')
-
- " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  "coc.nvim 
-  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
- " jedi-vim (2020-04)
-  call dein#add('davidhalter/jedi-vim')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-"End dein Scripts-------------------------
-"
-
+" タブキー押下時に挿入される文字幅を指定
+set softtabstop=2
+syntax on
+" Escの2回押しでハイライト消去
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+set cursorcolumn
+set autoindent
+set incsearch
+set laststatus=2
+set background=dark
